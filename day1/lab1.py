@@ -2,7 +2,21 @@ def binarify(num):
   """convert positive integer to base 2"""
   if num<=0: return '0'
   digits = []
-  return ''.join(digits)
+  
+  numbers = [12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+  
+  for i in numbers: 
+   if num>=(2**i):
+      digits.append('1')
+      num = num - (2**i)
+  #   print num
+  #   print digits
+   else:
+      digits.append('0')
+      
+  print ''.join(digits)
+  
+binarify(130)
 
 def int_to_base(num, base):
   """convert positive integer to a string in any base"""
@@ -30,3 +44,4 @@ def romanify(num):
   """given an integer, return the Roman numeral version"""
   result = ""
   return result
+   
