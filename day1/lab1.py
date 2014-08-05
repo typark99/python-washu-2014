@@ -1,4 +1,4 @@
-def binarify(num): 
+def binarify2(num): 
   """convert positive integer to base 2"""
   if num<=0: return '0'
   digits = []
@@ -13,10 +13,10 @@ def binarify(num):
       digits.append('0')
   return ''.join(digits)
   
-#print binarify(130)
+#print binarify2(130)
 
 ## From Dave
-def binarify2(num): 
+def binarify(num): 
   """convert positive integer to base 2"""
   if num<=0: return '0'
   digits=[]
@@ -26,7 +26,7 @@ def binarify2(num):
   digits=digits[::-1]
   return ''.join(str(e) for e in digits)
 
-#print binarify2(130)
+#print binarify(130)
 
 
 def int_to_base(num, base):
