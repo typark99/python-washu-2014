@@ -11,7 +11,6 @@ def binarify(num):
       num = num - (2**i)
    else:
       digits.append('0')
-      
   return ''.join(digits)
   
 #print binarify(130)
@@ -61,21 +60,32 @@ def int_to_base2(num, base):
 
 def base_to_int(string, base):
   """take a string-formatted number and its base and return the base-10 integer"""
-  if string=="0" or base <= 0 : return 0 
-  result = 0 
-  return result 
+  if string=="0" or base <= 0: return 0 
+  result = 0
+  for i in range(0, len(string)):
+    power = range(0, len(string))
+    power = power[::-1]
+    result +=int(string[i])*base**power[i]
+  return result
   
-  
+#print base_to_int("10001", 2)
+#print base_to_int("1321", 4)
   
 def flexibase_add(str1, str2, base1, base2):
   """add two numbers of different bases and return the sum"""
-  result = int_to_base(tmp, base1)
+  tmp = base_to_int(str1, base1)+base_to_int(str2, base2)
+  result = int_to_base(tmp, base1) # it will return a string in base base1
   return result 
+  
+#print flexibase_add("10001", "1321", 2, 4)
 
 def flexibase_multiply(str1, str2, base1, base2):
   """multiply two numbers of different bases and return the product"""
+  tmp = base_to_int(str1, base1)*base_to_int(str2, base2)
   result = int_to_base(tmp, base1)
   return result 
+  
+#print flexibase_multiply("10001", "1321", 2, 4)
 
 def romanify(num):
   """given an integer, return the Roman numeral version"""
