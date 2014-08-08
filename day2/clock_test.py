@@ -1,5 +1,5 @@
 import unittest
-import clock
+from clock import Clock
 
 class ClockTest(unittest.TestCase):
 
@@ -10,7 +10,6 @@ class ClockTest(unittest.TestCase):
   def test_past_the_hour(self):
     self.assertEqual("11:09", Clock.at(11, 9).__str__() )
 
-"""
   def test_add_a_few_minutes(self):
     clock = Clock.at(10) + 3
     self.assertEqual("10:03", clock.__str__())
@@ -43,6 +42,5 @@ class ClockTest(unittest.TestCase):
     clock = Clock.at(0, 30) - 60
     self.assertEqual("23:30", clock.__str__())
 
-"""
 if __name__ == '__main__':
-  unittest.main() 
+  unittest.main()
