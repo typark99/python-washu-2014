@@ -17,9 +17,7 @@ class Lab3Test(unittest.TestCase):
     
   def test_reversewords(self):
     self.assertEqual("", lab3.reversewords(3))
-    #self.assertEqual("hi.", lab3.reversewords("hi!"))
-    #self.assertEqual("HI, HOW ARE YOU!!", lab3.reversewords("Hi, how are you?"))
-  	
+    self.assertEqual("! Good . thanks fine i'm ? you are how", lab3.reversewords("how are you? i'm fine thanks. Good!"))
     
 if __name__ == '__main__':
   unittest.main()

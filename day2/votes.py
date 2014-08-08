@@ -1,19 +1,17 @@
 class Senator():
   def __init__(self, name):
-    self.name = name
-    self.bills_voted_on = []
-
+      self.name = name
+      self.bills_voted_on = []
   def vote(self, bill, choice):
-    print self.name + " votes " + choice + " on " + bill.title
-    bill.votes[choice].append(self.name)
-    self.bills_voted_on.append(bill)
+      print self.name + " votes " + choice + " on " + bill.title
+      bill.votes[choice].append(self.name)
+      self.bills_voted_on.append(bill)
 
 class Bill():
   def __init__(self, title):
     self.title = title
     self.votes = {"yes" : [], "no" : [], "abstain" : []}
     self.passed = None
-
   def result(self):
     if len(self.votes["yes"]) > len(self.votes["no"]):
       self.passed = True

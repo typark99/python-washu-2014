@@ -1,12 +1,11 @@
-# def linear_search(mylist, element):
-# 	steps = 0
-# 	for item in mylist:
-# 		steps += 1
-# 		if item == element:
-# 			print steps
-# 			return item
-# 	print steps 
-# 	return None
+def linear_search(mylist, element):
+	steps = 0
+	for item in mylist:
+		steps += 1
+		if item == element:
+			return item
+	print steps 
+	return None
 	
 	
 def binary_search(sorted_list, element):

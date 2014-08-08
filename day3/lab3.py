@@ -20,12 +20,11 @@ def reversewords(txt):
   new_text = ""
   reversed_sentences = []
     
-  #tmp = txt.replace("?", ".")
-  #tmp = tmp.replace("!", ".")
+  tmp = txt.replace("?", ".")
+  tmp = tmp.replace("!", ".")
   
-  sentences = txt.split(". ") 
-  sentences = sentences.split("? ")
-  sentences = sentences.split("! ")
+  sentences = tmp.split(". ") 
+  
   sentences = [s.strip() for s in sentences if len(s.strip()) > 0]
   
   last_sentence = sentences[len(sentences) - 1]
@@ -46,7 +45,7 @@ def reversewords(txt):
       new_text += sentence
       new_text += ". "
     
-  return new_text
+  return new_text[::-1]
   
 def reversewordletters(txt):
   if isinstance(txt, str) == False:
